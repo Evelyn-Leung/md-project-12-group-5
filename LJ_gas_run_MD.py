@@ -134,11 +134,15 @@ P_init = ideal_gas_pressure(ps, sim)
 position_trajectory = np.zeros((sim.n_steps+1, n_particles, 3))
 position_trajectory[0,:,:] = ps.position # initial position
 
+# initialize velocity trajectory
+velocity_trajectory = np.zeros((sim.n_steps+1, n_particles, 3))
+velocity_trajectory[0,:,:] = ps.velocity # initial velocity
+
 # initialize energy trajectory
 energy_trajectory = np.zeros((sim.n_steps+1, 4))
 energy_trajectory[0,0] = potential_energy( ps, sim)       # potential energy
 energy_trajectory[0,1] = kinetic_energy(ps)               # kinetic energy
-energy_trajectory[0,2] = instantaneous_temperature(ps)    # instantaneous pressure
+energy_trajectory[0,2] = instantaneous_temperature(ps)    # instantaneous temperature
 energy_trajectory[0,3] = ideal_gas_pressure(ps, sim)      # ideal gas pressure
 
 
@@ -153,11 +157,14 @@ for i in range(sim.n_steps):
         
     # store updated positions
     position_trajectory[i+1,:,:] = ps.position # store updated positions
+    
+    # store updated velocities
+    velocity_trajectory[i+1,:,:] = ps.velocity # store updated velocities
 
     # store updated energies, temperature and pressure
     energy_trajectory[i+1,0] = potential_energy( ps, sim)     # potential energy
     energy_trajectory[i+1,1] = kinetic_energy(ps)             # kinetic energy
-    energy_trajectory[i+1,2] = instantaneous_temperature(ps)  # instantaneous pressure
+    energy_trajectory[i+1,2] = instantaneous_temperature(ps)  # instantaneous temperature   
     energy_trajectory[i+1,3] = ideal_gas_pressure(ps, sim)    # ideal gas pressure
 
 
@@ -166,6 +173,8 @@ for i in range(sim.n_steps):
 #--------------------------------------
 # write position trajectory to file
 write_xyz_trajectory(file_name_base + "_pos.xyz", position_trajectory, atom_symbol="Ar")
+# write velocity trajectory to file
+write_xyz_trajectory(file_name_base + "_vel.xyz", velocity_trajectory, atom_symbol="Ar")
 # write energy trajectory to file (binary and text)
 np.save(file_name_base + "_ene.npy", energy_trajectory)
 np.savetxt(file_name_base + "_ene.dat", energy_trajectory, fmt="%.6e", header="#E_pot  E_kin  T  P", comments='')
