@@ -1,0 +1,25 @@
+
+----------------------------------------------------------
+Simulation parameters 
+----------------------------------------------------------
+Number of particles:                 100 
+Box length:                    1.000e+02 nm
+Box volume:                    1.000e+06 nm^3
+Density:                       6.634e-06 g/cm^3
+
+Time step:                         0.100 ps
+Number of time steps:               1000
+Simulation time:               1.000e+02 ps
+
+Ensemble:                            NVT
+Thermostat temperature:              300 K
+Thermostat coupling:           1.000e+00 ps
+
+Lower cutoff radius:               0.010 nm
+----------------------------------------------------------
+Elapsed time:                     19.337 s
+Elapsed time per time step:        0.019 s
+Time stamp:                   2026-07-20 14:44:51 s
+----------------------------------------------------------
+END
+----------------------------------------------------------
