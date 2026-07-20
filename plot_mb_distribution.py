@@ -8,9 +8,9 @@ from scipy.constants import R
 # ==========================================
 # 1. 参数配置（必须与当前模拟参数完全一致）
 # ==========================================
-temperature = 300.0       # 模拟设定温度 K
+temperature = 600.0       # 模拟设定温度 K
 mass_argon = 39.95        # 氩气摩尔质量 g/mol
-file_name_vel = "my_simulation_vel.npy"
+file_name_vel = "my_simulation_600K_vel.npy"
 
 # 计算理论分布所需的参数
 # 速度单位转换：MD中速度为 nm/ps (即 1000 m/s)，(v in m/s)^2 = 1e6 * (v in nm/ps)^2
@@ -58,7 +58,7 @@ plt.xlabel('Speed $v$ (nm/ps)', fontsize=12)
 plt.ylabel('Probability Density $P(v)$', fontsize=12)
 plt.legend(fontsize=11)
 plt.grid(True, linestyle='--', alpha=0.5)
-plt.savefig('mb_speed_distribution.png', dpi=300, bbox_inches='tight')
+plt.savefig('mb_speed_distribution_600K.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # ==========================================
@@ -86,5 +86,5 @@ for i, ax in enumerate(axes):
 
 plt.suptitle('Component-wise Velocity Distributions vs. 1D Gaussian Theory', fontsize=14, y=1.02)
 plt.tight_layout()
-plt.savefig('mb_components_distribution.png', dpi=300, bbox_inches='tight')
+plt.savefig('mb_components_distribution_600K.png', dpi=300, bbox_inches='tight')
 plt.show()
