@@ -76,14 +76,14 @@ epsilon_argon = 120*R*1e-3      # epsilon in kJ/mol Argon: 120
 # simulation
 dt = 0.1             # ps
 n_steps = 1000 
-temperature = 600     # K
+temperature = 300     # K
 box_length = 100      # nm
 tau_thermostat = 1  # thermostat coupling constant in 1/ps
 rij_min = 1e-2      # nm
 NVT = True          # switch to decide between NVT and NVE
 
 # output
-file_name_base = "my_simulation_600K" \
+file_name_base = "my_simulation_N200" \
 ""  # file name for all output files
 
 #----------------------------------------------------------------
