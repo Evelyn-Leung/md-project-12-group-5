@@ -174,7 +174,7 @@ for i in range(sim.n_steps):
 # write position trajectory to file
 write_xyz_trajectory(file_name_base + "_pos.xyz", position_trajectory, atom_symbol="Ar")
 # write velocity trajectory to file
-write_xyz_trajectory(file_name_base + "_vel.xyz", velocity_trajectory, atom_symbol="Ar")
+np.save(file_name_base + "_vel.npy", velocity_trajectory)
 # write energy trajectory to file (binary and text)
 np.save(file_name_base + "_ene.npy", energy_trajectory)
 np.savetxt(file_name_base + "_ene.dat", energy_trajectory, fmt="%.6e", header="#E_pot  E_kin  T  P", comments='')
