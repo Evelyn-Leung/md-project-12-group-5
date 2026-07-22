@@ -1,0 +1,17 @@
+Thermostat comparison
+======================================================================================================================
+Fixed conditions: T_target=300 K, N=200, L=100 nm
+Canonical relative temperature variance 2/(3N) = 0.00333333
+
+method            <T>/K    T err %     std T/K    rel var T      Qvar   KS pooled    KS frame   KS own T
+---------------------------------------------------------------------------------------------------------
+langevin        300.184      0.061      16.256     0.002933     0.880    0.003034    0.060201   0.002832
+andersen        301.598      0.533      18.664     0.003829     1.149    0.008210    0.061328   0.005828
+berendsen       300.000      0.000       0.001     0.000000     0.000    0.053888    0.053892   0.053888
+nve             304.545      1.515       0.001     0.000000     0.000    0.047523    0.047523   0.042523
+
+Interpretation:
+  Qvar ≈ 1: canonical temperature fluctuations are reproduced.
+  Qvar < 1: fluctuations are suppressed.
+  NVE is not expected to satisfy the NVT fluctuation criterion.
+  KS own T separates distribution-shape error from an average-temperature offset.

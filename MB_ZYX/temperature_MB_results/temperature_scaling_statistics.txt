@@ -1,0 +1,31 @@
+Temperature scaling of the Maxwell-Boltzmann distribution
+==============================================================================
+
+A quantity follows sqrt(T) scaling if quantity/sqrt(T) is approximately constant.
+
+     T/K      T_MD/K       <v> MD    <v> theory     std(v) MD    std theory      vmp fit    vmp theory      KS D
+-----------------------------------------------------------------------------------------------------------------
+   100.0     100.250     0.230572      0.230212      0.097105      0.097153     0.204275      0.204020  0.002936
+   300.0     300.184     0.399109      0.398740      0.167741      0.168274     0.353482      0.353374  0.003027
+   600.0     603.769     0.565027      0.563903      0.240243      0.237976     0.501313      0.499746  0.002685
+
+Fit through origin:
+  MD mean speed = 0.02305877 * sqrt(T), R^2 = 0.99999783
+  MD speed std  = 0.00976114 * sqrt(T), R^2 = 0.99967516
+
+Expected temperature ratios:
+  300 K / 100 K:
+    expected sqrt(T2/T1) = 1.732051
+    MD mean-speed ratio  = 1.730951
+    MD std-speed ratio   = 1.727421
+    MD fitted-mode ratio = 1.730419
+  600 K / 100 K:
+    expected sqrt(T2/T1) = 2.449490
+    MD mean-speed ratio  = 2.450546
+    MD std-speed ratio   = 2.474057
+    MD fitted-mode ratio = 2.454102
+  600 K / 300 K:
+    expected sqrt(T2/T1) = 1.414214
+    MD mean-speed ratio  = 1.415723
+    MD std-speed ratio   = 1.432226
+    MD fitted-mode ratio = 1.418212

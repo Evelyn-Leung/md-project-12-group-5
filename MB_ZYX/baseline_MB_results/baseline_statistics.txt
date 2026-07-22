@@ -1,0 +1,19 @@
+Baseline Maxwell-Boltzmann analysis
+========================================================================
+Input file: my_simulation_300K_N200_L100_Langevin_vel.npy
+Temperature: 300.000000 K
+Molar mass: 39.950000 g/mol
+Particle number read from file: 200
+Frames used: 701 (starting at frame 300)
+Theoretical component sigma: 0.24987300 nm/ps
+Component anisotropy index: 0.01003028
+
+name             MD mean     theory mean        MD std      theory std    std err %        KS D
+------------------------------------------------------------------------------------------------
+vx             0.0002372       0.0000000     0.2498857       0.2498730       0.0051    0.002101
+vy             0.0016957       0.0000000     0.2487459       0.2498730       0.4511    0.004750
+vz            -0.0042893       0.0000000     0.2512531       0.2498730       0.5523    0.008947
+speed          0.3990661       0.3987396     0.1679640       0.1682744       0.1845    0.002128
+
+Interpretation: KS D = sup_x |F_MD(x) - F_theory(x)|. Smaller values indicate closer agreement.
+The trajectory frames are time-correlated; therefore KS D is used here as a descriptive distance. A formal KS p-value is not reported.

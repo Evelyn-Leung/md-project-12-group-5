@@ -1,0 +1,23 @@
+Particle-number dependence of Maxwell-Boltzmann sampling
+====================================================================================================
+Fixed conditions: T=300 K, L=100 nm, Langevin NVT
+Theoretical Maxwell scale sigma = 0.24987300 nm/ps
+Theoretical mean speed = 0.39873962 nm/ps
+Theoretical speed std = 0.16827437 nm/ps
+Theoretical mode speed = 0.35337378 nm/ps
+
+     N       <T>/K     rel std T      theory    <v> err %   std(v) err %   pooled KS      frame KS       KS SD     KS*sqrtN
+----------------------------------------------------------------------------------------------------------------------------
+    20     304.405      0.186464    0.182574       0.2225         3.5468    0.007688      0.190112    0.058572     0.850207
+    50     293.359      0.117555    0.115470       0.9534         2.0134    0.012669      0.120458    0.037530     0.851769
+   100     304.653      0.077276    0.081650       0.8303         0.4483    0.007306      0.083887    0.023624     0.838865
+   200     300.250      0.058633    0.057735       0.0819         0.1845    0.002128      0.060506    0.018659     0.855691
+
+Interpretation
+----------------------------------------------------------------------------------------------------
+1. At fixed T and particle mass, the theoretical Maxwell speed curve is independent of N.
+2. The pooled histograms may all look smooth because many correlated frames are combined.
+3. Frame-wise KS uses only N speeds per frame and therefore retains the finite-system sampling effect.
+4. For canonical kinetic-energy fluctuations, std(T)/<T> is expected to scale approximately as sqrt(2/(3N)).
+5. For ordinary finite sampling, a distribution-distance measure such as KS is expected to decrease approximately as 1/sqrt(N).
+6. Adjacent MD frames are time-correlated, so KS is used as a descriptive distance, not as a formal p-value test.
